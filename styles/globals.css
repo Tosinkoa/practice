@@ -1,16 +1,63 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*-----------Navbar----------*/
+.navbar_buttons {
+  @apply hover:bg-gradient-to-r hover:from-purple-300 hover:to-pink-200 hover:text-gray-700  md:p-2 md:rounded-lg;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/*-----------Dropdown----------*/
+.messagebackground {
+  @apply text-white  bg-red-500 text-center rounded-full w-4  absolute mx-0 -right-1 -top-2 text-xs;
 }
 
-* {
-  box-sizing: border-box;
+.backdrop {
+  @apply bg-black  opacity-60 select-none top-0 bottom-0 w-full min-h-screen lg:hidden absolute z-10;
+}
+
+.dropdown_background {
+  @apply flex flex-col top-0 h-screen overflow-y-auto  bg-[#1b2030] lg:hidden fixed sm:w-8/12 md:w-1/4 pl-2 z-20;
+}
+
+.dropdown_header {
+  @apply h-16 w-full -space-x-3  inline-flex justify-between cursor-pointer;
+}
+
+.dropdown_header_title {
+  @apply text-base sm:mt-6 sm:text-sm font-logo-font text-indigo-900 mt-5;
+}
+
+.dropdown_close {
+  @apply text-2xl  flex  mt-20 m-2 sm:text-base md:text-lg z-20 absolute right-0;
+}
+
+/*-----------Sidebar----------*/
+
+.sidebar_background {
+  @apply lg:relative z-20 lg:w-2/12 w-2/4 lg:flex flex-col top-0  min-h-screen  sm:hidden;
+}
+
+.sidebar_logo {
+  @apply h-16 flex relative items-center;
+}
+
+.sidebar_name_logo {
+  @apply text-lg font-logo-font text-indigo-900 mt-1;
+}
+
+.sidebar_list_background {
+  @apply flex flex-col mt-2 min-h-full  text-xs -space-y-1;
+}
+
+.sidebar_message {
+  @apply text-white w-3 bg-red-500 rounded-full text-center h-3 absolute mx-0 -right-1 -top-1;
+}
+
+.sidebar_menu {
+  @apply pl-6 cursor-pointer font-my-font leading-3 tracking-normal py-2   outline-none hover:bg-gradient-to-r hover:from-purple-200 hover:to-pink-300 hover:text-gray-700;
+}
+
+.sidebar_title {
+  @apply ml-4 my-1 font-my-font  font-bold text-gray-700;
 }
